@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | Pizzaria</title>
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("tema") || "dark");</script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo da Pizzaria" class="logo-img"><span>PIZZARIA</span></a>
+    <button class="btn-tema" id="btn-tema" type="button">Modo Claro</button>
+    <form class="busca" id="form-busca" role="search">
+      <input type="search" id="campo-busca" placeholder="Busca" maxlength="40" aria-label="Buscar pizzas">
+    </form>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
+    <nav class="menu" id="menu">
+      <a href="index.html" data-pagina="index.html">Início</a>
+      <a href="produtos.html" data-pagina="produtos.html">Produtos</a>
+      <a href="pedidos.html" data-pagina="pedidos.html">Pedidos</a>
+      <a href="carrinho.html" data-pagina="carrinho.html"><span class="icone-carrinho" role="img" aria-label="Carrinho"></span><span class="badge" id="contador-carrinho">0</span></a>
+      <a href="perfil.html" data-pagina="perfil.html">Perfil</a>
+      <div class="area-usuario" id="area-usuario">
+        <a href="login.html">Login</a>
+        <a href="login.html#cadastro" class="btn-cadastro">Cadastro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Bateu a fome e quer praticidade?</h1>
+        <p>Peça pizza com mais agilidade!</p>
+        <a href="produtos.html" class="btn">Ver cardápio</a>
+      </div>
+    </section>
+
+    <h2 class="titulo-secao">Nossos Destaques</h2>
+    <section class="grid-produtos" id="lista-destaques"></section>
+
+    <h2 class="titulo-secao">Como funciona</h2>
+    <section class="passos">
+      <div class="passo">
+        <h3>Escolha</h3>
+        <p>Navegue pelo cardápio ou use a busca para achar sua pizza favorita.</p>
+      </div>
+      <div class="passo">
+        <h3>Adicione ao carrinho</h3>
+        <p>Inclua bebidas, ajuste as quantidades e confira o valor total com a entrega.</p>
+      </div>
+      <div class="passo">
+        <h3>Acompanhe</h3>
+        <p>Depois de finalizar, veja o status do pedido na página Pedidos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="perfil.html">Perfil</a>
+    </nav>
+    <p>Pizzaria · Rua São Pedro, 123 - Centro · (11) 98765-4321</p>
+    <p>© 2026 Pizzaria. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

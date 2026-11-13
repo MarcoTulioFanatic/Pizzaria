@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | Pizzaria</title>
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("tema") || "dark");</script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo da Pizzaria" class="logo-img"><span>PIZZARIA</span></a>
+    <button class="btn-tema" id="btn-tema" type="button">Modo Claro</button>
+    <form class="busca" id="form-busca" role="search">
+      <input type="search" id="campo-busca" placeholder="Busca" maxlength="40" aria-label="Buscar pizzas">
+    </form>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
+    <nav class="menu" id="menu">
+      <a href="index.html" data-pagina="index.html">Início</a>
+      <a href="produtos.html" data-pagina="produtos.html">Produtos</a>
+      <a href="pedidos.html" data-pagina="pedidos.html">Pedidos</a>
+      <a href="carrinho.html" data-pagina="carrinho.html"><span class="icone-carrinho" role="img" aria-label="Carrinho"></span><span class="badge" id="contador-carrinho">0</span></a>
+      <a href="perfil.html" data-pagina="perfil.html">Perfil</a>
+      <div class="area-usuario" id="area-usuario">
+        <a href="login.html">Login</a>
+        <a href="login.html#cadastro" class="btn-cadastro">Cadastro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="caixa-form">
+      <div class="abas">
+        <button type="button" id="aba-login" class="ativo">Entrar</button>
+        <button type="button" id="aba-cadastro">Criar Conta</button>
+      </div>
+
+      <!-- FORMULARIO DE LOGIN -->
+      <form id="form-login" novalidate>
+        <p class="msg-erro" id="erro-login"></p>
+        <div class="campo">
+          <input type="email" name="email" placeholder="Email:" aria-label="Email" maxlength="60" required>
+        </div>
+        <div class="campo">
+          <input type="password" name="senha" placeholder="Senha:" aria-label="Senha" maxlength="20" required>
+        </div>
+        <div class="form-botoes">
+          <button type="submit" class="btn btn-claro">Entrar</button>
+          <button type="button" class="btn btn-claro" id="btn-criar-conta">Criar Conta</button>
+          <button type="button" class="btn-social"><span class="icone-social google">G</span>Continuar com Google</button>
+          <button type="button" class="btn-social"><span class="icone-social">f</span>Continuar com Facebook</button>
+        </div>
+      </form>
+
+      <!-- FORMULARIO DE CADASTRO -->
+      <form id="form-cadastro" class="oculto" novalidate>
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" maxlength="60" data-mascara="letras" placeholder="Seu nome completo">
+          <span class="erro"></span>
+        </div>
+        <div class="linha-2">
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" maxlength="14" inputmode="numeric" data-mascara="cpf" placeholder="000.000.000-00">
+            <span class="erro"></span>
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" maxlength="15" inputmode="numeric" data-mascara="telefone" placeholder="(00) 00000-0000">
+            <span class="erro"></span>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="email-cad">Email</label>
+          <input type="email" id="email-cad" name="email" maxlength="60" placeholder="seuemail@exemplo.com">
+          <span class="erro"></span>
+        </div>
+        <div class="linha-2">
+          <div class="campo">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" data-mascara="cep" placeholder="00000-000">
+            <span class="erro"></span>
+          </div>
+          <div class="campo">
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" maxlength="6" inputmode="numeric" data-mascara="numero" placeholder="123">
+            <span class="erro"></span>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="rua">Rua</label>
+          <input type="text" id="rua" name="rua" maxlength="60" placeholder="Rua São Pedro">
+          <span class="erro"></span>
+        </div>
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" name="bairro" maxlength="40" placeholder="Centro">
+          <span class="erro"></span>
+        </div>
+        <div class="linha-2">
+          <div class="campo">
+            <label for="senha-cad">Senha</label>
+            <input type="password" id="senha-cad" name="senha" maxlength="20" placeholder="Mín. 6 caracteres">
+            <span class="erro"></span>
+          </div>
+          <div class="campo">
+            <label for="confirmar">Confirmar senha</label>
+            <input type="password" id="confirmar" name="confirmar" maxlength="20" placeholder="Repita a senha">
+            <span class="erro"></span>
+          </div>
+        </div>
+        <div class="form-botoes">
+          <button type="submit" class="btn btn-claro">Criar conta</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="perfil.html">Perfil</a>
+    </nav>
+    <p>Pizzaria · Rua São Pedro, 123 - Centro · (11) 98765-4321</p>
+    <p>© 2026 Pizzaria. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
